@@ -1,0 +1,6 @@
+{
+    "client_id": "39293ddfb7a3496cb6055b71c6c2edd2",
+    "redirect_uri": "http://127.0.0.1:8765/callback",
+    "scopes": "esi-skills.read_skills.v1 esi-industry.read_character_mining.v1",
+    "port": 8765
+}

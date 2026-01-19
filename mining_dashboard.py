@@ -1,4 +1,4 @@
-# ================== EVE Mining Dashboard (EXE-FIREWALL READY) ==================
+# ================== EVE Mining Dashboard ==================
 
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -31,30 +31,12 @@ def add_firewall_rule():
 add_firewall_rule()
 
 # ================= CONFIG =================
-CONFIG_FILE = "config.json"
-DEFAULT_CONFIG = {
-    "client_id": "39293ddfb7a3496cb6055b71c6c2edd2",
-    "redirect_uri": "http://127.0.0.1:8765/callback",
-    "scopes": "esi-skills.read_skills.v1",
-    "port": 8765
-}
+# Embedded config (no config.json required)
+CLIENT_ID = "39293ddfb7a3496cb6055b71c6c2edd2"
+REDIRECT_URI = "http://127.0.0.1:8765/callback"
+PORT = 8765
+SCOPES = "esi-skills.read_skills.v1"
 
-if not os.path.exists(CONFIG_FILE):
-    with open(CONFIG_FILE, "w") as f:
-        json.dump(DEFAULT_CONFIG, f, indent=4)
-    messagebox.showerror(
-        "First Run",
-        "config.json was created.\nAdd your EVE client_id and restart the app."
-    )
-    raise SystemExit
-
-with open(CONFIG_FILE, "r") as f:
-    config = json.load(f)
-
-CLIENT_ID = config.get("client_id")
-REDIRECT_URI = config.get("redirect_uri")
-PORT = int(config.get("port", 8765))
-SCOPES = config.get("scopes")
 SSO_AUTH = "https://login.eveonline.com/v2/oauth/authorize"
 
 # ================= DATABASE =================

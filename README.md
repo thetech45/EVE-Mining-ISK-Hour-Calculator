@@ -65,9 +65,17 @@ View ISK/hr result
 
 Use Show Graph to see mining history
 
+🧪 Troubleshooting
+Program opens then closes?
+
+Run from Command Prompt once:
+
+python mining_dashboard.py
 
 
+Check for syntax errors
 
+Then open a ticket and staff will help.
 
 
 
